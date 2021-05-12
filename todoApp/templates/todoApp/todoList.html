@@ -1,33 +1,48 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <div class="position-relative p-3 text-white" style="text-align: center; background-color: #536162;">
-    <h1 class="h1 fw-bolder">My Todo List</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 class="h1 fw-bolder">My Todo List</h1>
+        </div>
+        <div class="col-lg-6">
+            <form action="/deleteAllItems/" method="post">
+                {% csrf_token %}
+                <input class="btn btn-danger" type="submit" value="Delete All Items">
+            </form>
+        </div>
+    </div>
+    
 </div>
 
 <body style="background-color: #F3F4ED;">
     <div class="p-3 mb-3">
         <div class="text-center">
-            <form action = "/addTodoItem/" method="post">{% csrf_token %}
+            <form action="/addTodoItem/" method="post">{% csrf_token %}
                 <div class="col-5" style="margin-left: 30%;">
-                    <input class="form-control" placeholder="Your Daily Work" type="text" name="content">
+                    <input class="form-control" placeholder="Your Daily Work" type="text" name="content" required>
                 </div>
-                
+
                 <!--<button class="btn btn-outline-secondary" type="submit">Add Todo Item</button>-->
                 <input class="btn btn-outline-secondary m-3" type="submit" value="Add Todo Item">
             </form>
         </div>
-        
+
         <div style="margin-left: 30%;">
-            <ul>
+            <ol>
                 {% for i in all_items %}
                 <li>{{i.content}}
-                    <form action="/deleteTodoItem/{{i.id}}/" method="POST">{%csrf_token%}
-                        <input type="submit" value="Delete">
+                    <form action="/doneItems/{{i.id}}/" method="post">
+                        {% csrf_token %}
+                        <input type="button" class="btn btn-outline-success" value="Done">
+                    </form>
+                    <form action="/deleteTodoItem/{{i.id}}/" method="POST">
+                        {% csrf_token%}
+                        <input type="submit" class="btn btn-outline-warning" value="Delete">
                     </form>
                 </li>
                 {% endfor %}
-            </ul>
-        </div>    
+            </ol>
+        </div>
     </div>
 </body>
-
-

@@ -31,3 +31,14 @@ def deleteTodoView(request,i):
     y.delete()
     return HttpResponseRedirect('/')
 
+def deleteAllContents(request):
+    y = TodoListItem.objects.all()
+    y.delete()
+    return HttpResponseRedirect('/')
+
+def doneItems(request,i):
+    y = TodoListItem.objects.all().filter(id = i).order_by('i')[::-1]
+    y.save()
+    return HttpResponseRedirect('/')
+
+
