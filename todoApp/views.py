@@ -37,10 +37,8 @@ def deleteAllContents(request):
     return HttpResponseRedirect('/')
 
 def doneItems(request,i):
-    y = TodoListItem.objects.all().filter(id = i).order_by('i')[::-1]
-    y.save()
+    y = TodoListItem.objects.get(id = i)
+    last_item = TodoListItem(content = y.content)
+    last_item.save()
+    y.delete()
     return HttpResponseRedirect('/')
-
-    
-
-

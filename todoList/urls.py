@@ -24,5 +24,5 @@ urlpatterns = [
     path('addTodoItem/',addtoview),
     path('deleteTodoItem/<int:i>/',deleteTodoView),
     path('deleteAllItems/',deleteAllContents),
-    path('doneItems/<int:i>',doneItems),
+    path('doneitem/<int:i>/',doneItems),
 ]

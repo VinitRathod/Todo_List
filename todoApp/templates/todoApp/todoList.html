@@ -32,9 +32,9 @@
             <ol>
                 {% for i in all_items %}
                 <li>{{i.content}}
-                    <form action="/doneItems/{{i.id}}/" method="post">
+                    <form action="/doneitem/{{i.id}}/" method="POST">
                         {% csrf_token %}
-                        <input type="button" class="btn btn-outline-success" value="Done">
+                        <input type="submit" class="btn btn-outline-success" value="Done">
                     </form>
                     <form action="/deleteTodoItem/{{i.id}}/" method="POST">
                         {% csrf_token%}
