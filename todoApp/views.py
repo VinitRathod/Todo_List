@@ -1,6 +1,9 @@
-from django.shortcuts import render,HttpResponse,HttpResponseRedirect
+from django.shortcuts import render,HttpResponse,HttpResponseRedirect,redirect
 from .models import TodoListItem
 from django.views import generic
+from . import forms
+from django.core.mail import send_mail,BadHeaderError
+from django.conf import settings
 
 # Create your views here.
 """def index(request):
@@ -19,6 +22,46 @@ class IndexView(generic.ListView):
     
     def get_queryset(self):
         return TodoListItem.objects.all()
+
+"""class ContactView(generic.FormView):
+    template_name = "todoApp/contact.html"
+    form_class = forms.ContactForm
+    def form_valid(self, form):
+        subject = 'Contact'
+        body = {
+            'first_name':form.cleaned_data['first_name'],
+            'last_name':form.cleaned_data['last_name'],
+            'email':form.cleaned_data['email'],
+            'message':form.cleaned_data['message'],
+        }
+        message = '\n'.join(body.values())
+        send_mail('Contact Form',
+        message,
+        settings.EMAIL_HOST_USER,
+        ['vinitrathodmeera@gmail.com'],
+        fail_silently=False)
+        return super().form_valid(form)"""
+
+def contactView(request):
+    if request.method == "POST":
+        form = forms.ContactForm(request.POST)
+        if form.is_valid():
+            subject = 'Contact'
+            body = {
+                'first_name':form.cleaned_data['first_name'],
+                'last_name':form.cleaned_data['last_name'],
+                'email':form.cleaned_data['email'],
+                'message':form.cleaned_data['message'],
+            }
+            message = '\n'.join(body.values())
+            try:
+                send_mail(subject,message,settings.EMAIL_HOST_USER,['vinitrathod123@gmail.com'],fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid Header Found')
+            return redirect('index')
+
+    form = forms.ContactForm()
+    return render(request,'todoApp/contact.html',{'form':form})
 
 def addtoview(request):
     x = request.POST['content']
