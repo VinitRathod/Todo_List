@@ -6,10 +6,17 @@
             <h1 class="h1 fw-bolder">My Todo List</h1>
         </div>
         <div class="col-lg-6">
+            <!--Search Input and Submit Button-->
+            <form class="d-flex" action="/search/"method="GET">
+                <input class="form-control me-2" name='search' type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <!--End of Search Input and Submit Button-->
             <form action="/deleteAllItems/" method="post">
                 {% csrf_token %}
                 <input class="btn btn-danger" type="submit" value="Delete All Items">
             </form>
+
         </div>
     </div>
     
@@ -29,6 +36,26 @@
         </div>
 
         <div style="margin-left: 30%;">
+
+            <!--Search Logic-->
+            {% if filter_items is not None %}
+            <ol>
+                {% for i in filter_items%}
+                <li>{{i.content}}
+                    <form action="/doneitem/{{i.id}}/" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-outline-success" value="Done">
+                    </form>
+                    <form action="/deleteTodoItem/{{i.id}}/" method="POST">
+                        {% csrf_token%}
+                        <input type="submit" class="btn btn-outline-warning" value="Delete">
+                    </form>
+                </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+            <!--Search Logic End-->
+
             <ol>
                 {% for i in all_items %}
                 <li>{{i.content}}
