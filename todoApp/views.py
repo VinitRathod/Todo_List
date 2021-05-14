@@ -4,6 +4,7 @@ from django.views import generic
 from . import forms
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
+from .models import TodoListItem
 
 # Create your views here.
 """def index(request):
@@ -22,6 +23,15 @@ class IndexView(generic.ListView):
     
     def get_queryset(self):
         return TodoListItem.objects.all()
+
+class SearchView(generic.ListView):
+    model = TodoListItem
+    template_name = 'todoApp/todoList.html'
+    context_object_name = 'filter_items'
+
+    def get_queryset(self):
+        query = self.request.GET.get('search')
+        return TodoListItem.objects.filter(content__icontains = query)
 
 """class ContactView(generic.FormView):
     template_name = "todoApp/contact.html"
@@ -55,7 +65,7 @@ def contactView(request):
             }
             message = '\n'.join(body.values())
             try:
-                send_mail(subject,message,settings.EMAIL_HOST_USER,['vinitrathod123@gmail.com'],fail_silently=False)
+                send_mail(subject,message,body['email'],['vinitrathod123@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid Header Found')
             return redirect('index')
