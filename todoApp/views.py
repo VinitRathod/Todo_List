@@ -95,3 +95,17 @@ def doneItems(request,i):
     last_item.save()
     y.delete()
     return HttpResponseRedirect('/')
+
+def register(request):
+    form = forms.CreateUserForm()
+    if request.method == "POST":
+        form = forms.CreateUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+
+            return redirect('todoApp:login')
+    return render(request,'todoApp/register.html',{'form':form,})
+
+def sign_in(request):
+    pass
