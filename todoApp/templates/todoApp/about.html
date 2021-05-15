@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link the bootstrap file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- link the css file -->
+    <link rel="stylesheet" href="{% static 'css/todoList.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <!-- link the google font file -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Overpass:wght@100&family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>My Todo List</title>
+  </head>
+ <!------------------------------------------------body --------------------------------------------->
+  <body>
+    <div class="div_header">
+      <!-- navbar start------------------------------------>
+      <div class="div_h1">
+        My Todo List
+      </div>
+      <div class="div_top_navbar" id="myTopnav">
+        <a href="todoList.html">Home</a>
+        <!-- <a href="#search">Search</a> -->
+        <a href="contact_us.html" >Contact</a>
+        <a href="#active" class="active">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <!-- navbar end ---------------------------->
+    </div>
+
+    <div>
+      <!-- about this website--------------------->
+      <div class="about_div_1">
+        <h2>About This Website..!</h2>
+        <p class="about_p">hello Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <!-- about developers---------------------------------->
+      <div class="about_div_2">
+        <!-- about vinit---------------------------->
+        <div class="about_vinit">
+          <img class="about_img" src="https://media-exp1.licdn.com/dms/image/C4D03AQEhn1rM6JVsgA/profile-displayphoto-shrink_200_200/0/1605805550214?e=1626307200&v=beta&t=8LjmEegFTxZOfWXXpn56ByeYrgXi-3-pm2bXaYVQdQk" alt="">
+          <div class="about_info">
+            <h2>&nbsp;&nbspVinit Rathod</h2>
+            <p>(Webdeveloper & programmer)</p>
+          </div>
+          <br><p class="about_p">The back-end Webdeveloper of this website, Experienced Campus Ambassador with a demonstrated history of working in the e-learning industry. Skilled in C++, Communication, English, Java, Python programming and Android Development. Strong education professional with a Pursuing B.Tech focused in Computer Engineering from CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY.</p>
+          <div class="about_sm">
+            <a href="mailto:vinitrathod123@gmail.com" target="_blank"><img class="img" src="{% static 'img/gmail_logo.png' %}" /></a>
+            <a href="https://www.linkedin.com/in/vinit-rathod-6436481b0" target="_blank"><img class="img" src="{% static 'img/linkedin_logo.png' %}" /></a>
+            <a href="https://github.com/VinitRathod" target="_blank"><img class="img" src="{% static 'img/github_logo.png' %}" /></a>
+            <a href="https://www.instagram.com/p/CK9CMM-l-5HwJ56iAWrBnzjjQUx7vlStjjfkl40/?igshid=1y1bsg0izgkvi" target="_blank"><img class="img" src="{% static 'img/instagram_logo.png' %}" /></a>
+            <a href="https://www.facebook.com/profile.php?id=100007342129295" target="_blank"><img class="img" src="{% static 'img/facebook_logo.png' %}" /></a>
+            <a href="about:_blank" target="_blank"><img class="img" src="{% static 'img/twitter_logo.png' %}" /></a>
+            <a href="about:_blank" target="_blank"><img class="img" src="{% static 'img/website.svg' %}" /></a>
+          </div>
+        </div>
+        <!-- about jainish----------------------------------------------->
+        <div class="about_jainish">
+          <img class="about_img" src="https://media-exp1.licdn.com/dms/image/C4E03AQFa_CsRq-5M2w/profile-displayphoto-shrink_200_200/0/1614358593011?e=1626307200&v=beta&t=rdlezUz6kbuLtXM4OOL7S2kBO0H-tUFBYU5J3IuTuNw" alt="">
+          <div class="about_info">
+            <h2>Jainish Ramanuj</h2>
+            <p>(Webdeveloper & programmer)</p>
+          </div>
+          <br><p class="about_p">The Front-end Webdeveloper of this Website, I'm also a Competitive Programmer & Web Devloper. I'm passionate about learning for solve the problems, code for better future and create for community. Skilled in C++, Java, Python, Web technologies and Communication. Also i'm Pursuing B.Tech focused in Computer Engineering from CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY.</p>
+          <div class="about_sm">
+            <a href="mailto:jainishramanuj@gmail.com" target="_blank"><img class="img" src="{% static 'img/gmail_logo.png' %}" /></a>
+            <a href="https://www.linkedin.com/in/jainish-ramanuj-0aa4771b6" target="_blank"><img class="img" src="{% static 'img/linkedin_logo.png' %}" /></a>
+            <a href="https://github.com/jainishramanuj8" target="_blank"><img class="img" src="{% static 'img/github_logo.png' %}" /></a>
+            <a href="https://twitter.com/JainishRamanuj?s=08" target="_blank"><img class="img" src="{% static 'img/twitter_logo.png' %}" /></a>
+            <a href="https://jainishramanuj.github.io/second_personal_site/" target="_blank"><img class="img" src="{% static 'img/website.svg' %}" /></a>
+            <a href="about:_blank" target="_blank"><img class="img" src="{% static 'img/facebook_logo.png' %}" /></a>
+            <a href="about:_blank" target="_blank"><img class="img" src="{% static 'img/instagram_logo.png' %}" /></a>
+          </div>
+        </div>
+      </div>
+      <!-- about developer ends----------------------------------->
+      <!-- footer navbar start---------------------------------------------------->
+      <div class="div_4">
+        <div class="f_navbar">
+          <a href="todoList.html">Home</a>
+          <!-- <a href="#search">Search</a> -->
+          <a href="contact_us.html">Contact</a>
+          <a href="#about" class="active">About</a>
+        </div>
+        <div class="f_socialmedia">
+          <div class="f_vinit">
+            <span>Back-end by: Vinit Rathod.</span><br>
+            <a href="mailto:vinitrathod123@gmail.com" target="_blank"><img class="img" src="{% static 'img/github_logo.png'%}" /></a>
+            <a href="https://www.linkedin.com/in/vinit-rathod-6436481b0" target="_blank"><img class="img" src="{% static 'img/linkedin_logo.png' %}" /></a>
+            <a href="https://github.com/VinitRathod" target="_blank"><img class="img" src="{% static 'img/gmail_logo.png' %}" /></a><br /><br />
+            <span><i>© 2021 My Todo List.</i></span>
+          </div>
+          <div class="f_jainish">
+            <span>Front-end by: Jainish Ramanuj.</span><br />
+            <a href="https://github.com/jainishramanuj8" target="_blank"><img class="img" src="{% static 'img/github_logo.png'%}" /></a>
+            <a href="https://www.linkedin.com/in/jainish-ramanuj-0aa4771b6" target="_blank"><img class="img" src="{% static 'img/linkedin_logo.png' %}" /></a>
+            <a href="mailto:jainishramanuj@gmail.com" target="_blank"><img class="img" src="{% static 'img/gmail_logo.png' %}" /></a><br /><br />
+            <span><i>Website since : 15-05-2021</i></span>
+          </div>
+        </div>
+      </div>
+      <!-- footer navbar end----------------------------->
+    </div>
+
+    <!-- link the JavaScript file -->
+    <script src="{% static 'js/todoList.js' %}"></script>
+  </body>
+</html>
