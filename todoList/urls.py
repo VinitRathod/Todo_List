@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from todoApp.views import (addtoview,IndexView,deleteTodoView,
                            deleteAllContents,doneItems,contactView,
-                           SearchView,register,sign_in)
+                           SearchView,register,sign_in,AboutView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,8 +27,9 @@ urlpatterns = [
     path('deleteTodoItem/<int:i>/',deleteTodoView),
     path('deleteAllItems/',deleteAllContents),
     path('doneitem/<int:i>/',doneItems),
-    path('contactus/',contactView),
+    path('contactus/',contactView,name='contact_us'),
     path('search/',SearchView.as_view()),
     path('register/',register,name="register"),
     path('login/',sign_in,name="login"),
+    path('about/',AboutView.as_view(),name='about')
 ]

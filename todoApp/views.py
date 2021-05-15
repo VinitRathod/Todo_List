@@ -2,9 +2,13 @@ from django.shortcuts import render,HttpResponse,HttpResponseRedirect,redirect
 from .models import TodoListItem
 from django.views import generic
 from . import forms
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail,BadHeaderError
 from django.conf import settings
 from .models import TodoListItem
+from django.contrib.auth.models import Group
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 """def index(request):
@@ -32,6 +36,9 @@ class SearchView(generic.ListView):
     def get_queryset(self):
         query = self.request.GET.get('search')
         return TodoListItem.objects.filter(content__icontains = query)
+
+class AboutView(generic.TemplateView):
+    template_name = 'todoApp/about.html'
 
 """class ContactView(generic.FormView):
     template_name = "todoApp/contact.html"
@@ -71,8 +78,9 @@ def contactView(request):
             return redirect('index')
 
     form = forms.ContactForm()
-    return render(request,'todoApp/contact.html',{'form':form})
+    return render(request,'todoApp/contact_us.html',{'form':form})
 
+#@login_required(login_url='login')
 def addtoview(request):
     x = request.POST['content']
     new_item = TodoListItem(content = x)
@@ -101,11 +109,27 @@ def register(request):
     if request.method == "POST":
         form = forms.CreateUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            users = form.save()
             username = form.cleaned_data.get('username')
 
-            return redirect('todoApp:login')
-    return render(request,'todoApp/register.html',{'form':form,})
+            group = Group.objects.get(name = 'users')
+            users.groups.add(group)
+
+            messages.success(request,'Account Created for '+username)
+
+            return redirect('login')
+    return render(request,'todoApp/register.html',{'form':form})
 
 def sign_in(request):
-    pass
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        users = authenticate(request,username=username,password=password)
+
+        if users is None : 
+            login(request,users)
+            return redirect('index')
+        else:
+            messages.info(request,'Username or Password is incorrect')
+    return render(request,'todoApp/login.html',{})
