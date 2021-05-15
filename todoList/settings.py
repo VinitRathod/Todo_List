@@ -27,13 +27,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-EMAIL_HOST = 'smtp.zoho.in'
+"""EMAIL_HOST = 'smtp.zoho.in'
 EMAIL_HOST_USER = 'vinitrathod123@gmail.com'
 EMAIL_HOST_PASSWORD = 'VINIT7046'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'"""
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = 'vinitrathod123@gmail.com'
+EMAIL_HOST_PASSWORD = 'VINIT7046'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
