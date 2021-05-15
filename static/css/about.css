@@ -1,0 +1,72 @@
+h2{
+  color: #ffc0c2;
+  padding: 20px 0 0 0;
+}
+.about_div_1{
+  background-color: #0e3150;
+  color: #6dc9c8;
+  padding: 15px 25px 15px 50px;
+  margin: 50px 10% 0 10%;
+  font-family: 'Mali', cursive;
+  font-size: 110%;
+  border-radius: 7px;
+
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-left-color: #6dc9c8;
+}
+.about_div_2{
+  display: inline-block;
+  column-count: 2;
+  padding: 50px 0 0 0;
+  margin: 0 10% 0;
+}
+.about_vinit{
+  background-color: #0e3150;
+  color: #6dc9c8;
+  padding: 30px 25px 30px 50px;
+  font-family: 'Mali', cursive;
+  font-size: 110%;
+  border-radius: 7px;
+
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-left-color: #6dc9c8;
+}
+.about_jainish{
+  background-color: #0e3150;
+  color: #6dc9c8;
+  padding: 30px 25px 30px 50px;
+  font-family: 'Mali', cursive;
+  font-size: 110%;
+  border-radius: 7px;
+
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-left-color: #6dc9c8;
+}
+@media screen and (max-width: 1000px) {
+  .about_div_2{
+    display: inline-block;
+    column-count: 1;
+  }
+  .about_jainish{
+    margin-top: 50px;
+  }
+}
+.about_info{
+  color: #ffc0c2;
+}
+.about_img{
+  float: left;
+  margin: 10px 30px 20px 0;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+}
+/* .about_p{
+  font-size: 120%;
+} */
+.about_name{
+  /* display: block; */
+}
