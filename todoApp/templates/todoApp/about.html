@@ -28,10 +28,10 @@
         My Todo List
       </div>
       <div class="div_top_navbar" id="myTopnav">
-        <a href="todoList.html">Home</a>
+        <a href="{% url 'index' %}">Home</a>
         <!-- <a href="#search">Search</a> -->
-        <a href="contact_us.html" >Contact</a>
-        <a href="#active" class="active">About</a>
+        <a href="{% url 'contact_us' %}" >Contact</a>
+        <a href="" class="active">About</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -88,10 +88,10 @@
       <!-- footer navbar start---------------------------------------------------->
       <div class="div_4">
         <div class="f_navbar">
-          <a href="todoList.html">Home</a>
+          <a href="{% url 'index' %}">Home</a>
           <!-- <a href="#search">Search</a> -->
-          <a href="contact_us.html">Contact</a>
-          <a href="#about" class="active">About</a>
+          <a href="{% url 'contact_us' %}">Contact</a>
+          <a href="" class="active">About</a>
         </div>
         <div class="f_socialmedia">
           <div class="f_vinit">
