@@ -202,6 +202,10 @@ body{
     padding: 50px 15px 15px 3%;
     font-size: 100%;
   }
+  .col-5{
+   margin: 0 auto 0 auto;
+   width: 230px;
+  }
 }
 
 /* footer{
