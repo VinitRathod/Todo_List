@@ -45,16 +45,16 @@ label{
 .in_div_2{
   margin: 20px 0 0 0;
 }
-.fname{
+#id_first_name{
   width: 200px;
 }
-.lname{
+#id_last_lname{
   width: 200px;
 }
-.email{
+#id_email{
   width: 200px;
 }
-.msg{
+#id_msg{
   width: 200px;
   height: 100px;
 }
