@@ -202,11 +202,17 @@ body{
     padding: 50px 15px 15px 3%;
     font-size: 100%;
   }
+  .col-5{
+  margin= 0 auto 0 auto;
+}
 }
 
 /* footer{
 
 } */
+.col-5{
+  margin= 0 auto 0 auto;
+}
 .div_center{
   margin: 0 10% 0 10%;
   background-color: #0e3150;
