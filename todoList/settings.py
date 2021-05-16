@@ -134,9 +134,9 @@ USE_TZ = True
 
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+"""STATICFILES_DIRS = [
     STATIC_DIR,
-]
+]"""
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
