@@ -112,30 +112,33 @@
                 </div>
                 {% endfor %}
             </div>
-            
-                    <div class="list">
-        <!--Search Logic-->
-              {% if filter_items is not None %}
-              <ol>
-                  {% for i in filter_items%}
-                  <li>
+            <!--Search Logic-->
+            {% if filter_items is not None %}
+            <div>
+                {% for i in filter_items%}
+                <div class="list">
+                    <!-- <ol> -->
+
+                    <!-- <li> -->
                     {{i.content}}
-                      <form action="/doneitem/{{i.id}}/" method="POST">
-                          {% csrf_token %}
-                          <input type="submit" class="btn_2 done" value="Done">
-                      </form>
-                      <form action="/deleteTodoItem/{{i.id}}/" method="POST">
-                          {% csrf_token%}
-                          <input type="submit" class="btn_2 delete" value="Delete">
-                      </form>
-                  </li>
-                  {% endfor %}
-              </ol>
-              {% endif %}
-              <!--Search Logic End-->
-        </div>
-            
-            
+                    <form action="/doneitem/{{i.id}}/" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" class="btn_2 done" value="Done">
+                    </form>
+                    <form action="/deleteTodoItem/{{i.id}}/" method="POST">
+                        {% csrf_token%}
+                        <input type="submit" class="btn_2 delete" value="Delete">
+                    </form>
+                    <!-- </li> -->
+
+                    <!-- </ol> -->
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!--Search Logic End-->
+
+
         </div>
         <!-- list of task ends--------------------------------------- -->
         <!-- footer navbar start---------------------------------------------------->
