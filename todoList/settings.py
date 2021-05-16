@@ -24,20 +24,20 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = 'y9t#@nuh)g8wn&5i6*@j*8_%4%+p4dkt_j3#p$7z7!(12xml%s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 """EMAIL_HOST = 'smtp.zoho.in'
 EMAIL_HOST_USER = 'vinitrathod123@gmail.com'
-EMAIL_HOST_PASSWORD = 'VINIT7046'
+EMAIL_HOST_PASSWORD = 'V!N!T100901'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'"""
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = 'vinitrathod123@gmail.com'
-EMAIL_HOST_PASSWORD = 'VINIT7046'
+EMAIL_HOST_PASSWORD = 'V!N!T100901'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
