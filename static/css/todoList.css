@@ -203,7 +203,7 @@ body{
     font-size: 100%;
   }
   .col-5{
-  margin= 0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 }
 
@@ -211,7 +211,7 @@ body{
 
 } */
 .col-5{
-  margin= 0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 .div_center{
   margin: 0 10% 0 10%;
