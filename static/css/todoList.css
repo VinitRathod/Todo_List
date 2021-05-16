@@ -221,6 +221,7 @@ body{
 
 .div_2{
   text-align: center;
+  column-count: 2;
 }
 .btn {
   background: #344fa1;
