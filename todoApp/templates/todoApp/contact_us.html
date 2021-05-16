@@ -54,13 +54,13 @@
           <form method="POST">
               {% csrf_token %}<br>
               <label>First Name : </label>
-              {{form.first_name}}<br>
+              <input type="text" name="first_name" maxlength="20" required="" id="id_first_name"><br>
               <label>Last Name : </label>
-              {{form.last_name}}<br>
+              <input type="text" name="last_name" maxlength="20" required="" id="id_last_name"><br>
               <label>Email : </label>
-              {{form.email}}<br>
+              <input type="email" name="email" maxlength="50" required="" id="id_email"><br>
               <label>Message : </label>
-              {{form.message}}<br>
+              <textarea name="message" cols="40" rows="10" maxlength="2000" required="" id="id_message"></textarea><br>
               <input class="btn" type="submit" value="Submit">
           </form>
         </div>
