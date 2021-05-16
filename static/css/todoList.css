@@ -202,6 +202,9 @@ body{
     padding: 50px 15px 15px 3%;
     font-size: 100%;
   }
+  .form-control{
+    width: 200px;
+  }
 }
 
 /* footer{
