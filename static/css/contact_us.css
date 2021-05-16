@@ -45,3 +45,16 @@ label{
 .in_div_2{
   margin: 20px 0 0 0;
 }
+.fname{
+  width: 200px;
+}
+.lname{
+  width: 200px;
+}
+.email{
+  width: 200px;
+}
+.msg{
+  width: 200px;
+  height: 100px;
+}
