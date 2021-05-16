@@ -8,6 +8,13 @@ class ContactForm(forms.Form):
     email = forms.EmailField(max_length = 50)
     message = forms.CharField(widget = forms.Textarea, max_length = 2000)
 
+    widgets = {
+        'first_name': forms.TextInput(attrs={'class':'fname'}),
+        'last_name' : forms.TextInput(attrs={'class':'lname'}),
+        'email' : forms.EmailInput(attrs={'class':'email'}),
+        'message' : forms.Textarea(attrs={'class':'msg'}),
+    }
+
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
