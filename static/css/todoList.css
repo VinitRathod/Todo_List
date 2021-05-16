@@ -88,7 +88,7 @@ body{
 }
 /* Hide the link that should open and close the topnav on small screens */
 .div_top_navbar .icon {
-  padding: 8px 10px;
+  padding: 8px 10px 2px 10px;
   margin: -6px 0 6px 6px;
   font-size: 23px;
   border: solid 1px;
@@ -102,7 +102,7 @@ body{
   border-bottom-color: #6dc9c8;
 }
 .div_top_navbar .icon:hover {
-  padding: 8px 10px;
+  padding: 8px 10px 2px 8px;
   margin: -6px 0 6px 6px;
   font-size: 23px;
   border: solid 1px;
@@ -221,7 +221,6 @@ body{
 
 .div_2{
   text-align: center;
-  column-count: 2;
 }
 .btn {
   background: #344fa1;
