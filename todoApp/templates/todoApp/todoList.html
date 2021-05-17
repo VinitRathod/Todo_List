@@ -103,10 +103,12 @@
                 {% for i in all_items %}
                 <div class="list">
                     {{i.content}}
+                    {% if i.done == False %}
                     <form class="done" action="/doneitem/{{i.id}}/" method="POST">
                         {% csrf_token %}
                         <input type="submit" class="btn_2" value="Done">
                     </form>
+                    {% endif %}
                     <form class="delete" action="/deleteTodoItem/{{i.id}}/" method="POST">
                         {% csrf_token%}
                         <input type="submit" class="btn_2" value="Delete">
