@@ -26,7 +26,7 @@ class IndexView(generic.ListView):
     context_object_name = 'all_items'
     
     def get_queryset(self):
-        return TodoListItem.objects.all()
+        return TodoListItem.objects.all().order_by('-time')
 
 class SearchView(generic.ListView):
     model = TodoListItem
@@ -99,7 +99,7 @@ def deleteAllContents(request):
 
 def doneItems(request,i):
     y = TodoListItem.objects.get(id = i)
-    last_item = TodoListItem(content = y.content)
+    last_item = TodoListItem(content = y.content,done = True)
     last_item.save()
     y.delete()
     return HttpResponseRedirect('/')
