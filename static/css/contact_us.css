@@ -46,15 +46,26 @@ label{
   margin: 20px 0 0 0;
 }
 #id_first_name{
-  width: 200px;
+  width: 190px;
+  height: 20px;
+  border-radius: 3px;
+  margin: 4px 0 4px 0;
 }
 #id_last_name{
-  width: 200px;
+  width: 190px;
+  height: 20px;
+  border-radius: 3px;
+  margin: 4px 0 4px 0;
 }
 #id_email{
-  width: 200px;
+  width: 190px;
+  height: 20px;
+  border-radius: 3px;
+  margin: 4px 0 4px 0;
 }
 #id_message{
-  width: 200px;
+  width: 190px;
   height: 100px;
+  border-radius: 3px;
+  margin: 4px 0 4px 0;
 }
